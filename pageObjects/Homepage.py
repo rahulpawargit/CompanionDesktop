@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+
 class HomePage:
     Location_Name_xpath = "//label[normalize-space()='Rishon LeZion']",
     Logo_xpaht = "//img[@alt='D Campus']",
