@@ -1,6 +1,7 @@
 import time
 
 import pytest
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -18,6 +19,8 @@ class HomePage:
     Workorder_xpath = "//div[contains(text(),'Work Order')]"
     Visitor_xpath = "//div[contains(text(),'My Visitors')]"
     Newx_xpaht= "//div[@class='textwrap'][normalize-space()='News']"
+    Cafeteria_xpath = "//a[normalize-space()='Cafeteria']"
+
 
     def __init__(self, driver):
         self.driver = driver
@@ -47,6 +50,15 @@ class HomePage:
         self.driver.find_element(By.XPATH, self.Visitor_xpath).click()
     def click_on_news(self):
         self.driver.find_element(By.XPATH, self.Newx_xpaht).click()
+
+    def click_on_workorder(self):
+        self.driver.find_element(By.XPATH, self.Workorder_xpath).click()
+        return self.driver.current_url
+    def Verify_cafeteria(self):
+        flag = self.driver.find_element(By.XPATH, self.Cafeteria_xpath).is_displayed()
+        return flag
+
+
 
 
 
